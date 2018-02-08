@@ -73,7 +73,7 @@ class EventsController < ApplicationController
 
   def subscribe
     render html: "method pas reussis pour l'instant"
-
+  
 
 
   end
