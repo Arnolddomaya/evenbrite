@@ -12,7 +12,7 @@
 
     <ul>
       <% if logged_in? %>
-        <li><h4><%= @current_user.name %><strong><%= link_to "[profile]", user_path(@current_user) %></strong><strong><%= link_to "[Log out]", logout_path, method: :delete %></strong></h4></li>
+        <li><h4><%= @current_user.name %><strong><%= link_to "[profile]", user_path(@current_user) %></strong><strong><%= link_to '[Creer un event]', new_event_path %></strong><strong><%= link_to "[Log out]", logout_path, method: :delete %></strong></h4></li>
       <% else %>
         <li><h4><strong><%= link_to "Log in", login_path %></strong></h4></li>
       <% end %>

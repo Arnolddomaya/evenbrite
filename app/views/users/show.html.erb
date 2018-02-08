@@ -6,3 +6,10 @@
 
 <p><%= link_to '[Editer] ', edit_user_path(@user) %> <%= link_to '[Suprimer]', @user, method: :delete %>
 <%= link_to '[Liste des utilisateurs] ', users_path %></p>
+<p> <%= link_to 'Creer un event', new_event_path %></p>
+
+<h2>Evenements</h2>
+<% @user.events.each do |event| %>
+  <h4>n° <strong><%= event.id %></strong>,  description : <strong><%= event.description %></strong></h4>
+
+<% end %>

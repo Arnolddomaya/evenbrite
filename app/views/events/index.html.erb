@@ -1,0 +1,9 @@
+<h1>Liste de Events </h1>
+
+
+<% @events.each do |event| %>
+
+  <h4>N° <strong><%= event.id %></strong>, Description   <strong><%= event.description %></strong>   <%= link_to '[voir] ', event_path(event) %> </h4>
+<% end  %>
+
+<h4><%= link_to "Liste des utilisateurs", users_path %></h4>

@@ -1,0 +1,25 @@
+<div class="row">
+
+  <div class="col-md-6 col-md-offset-3">
+    <h1>Create</h1>
+    <%= form_for(@event ) do |f| %>
+
+      <%= f.label :Description %>
+      <%= f.text_field :description, class: 'form-control' %>
+
+      <%= f.label :Date %>
+      <%= f.date_field :date, class: 'form-control' %>
+
+      <%= f.label :place %>
+      <%= f.text_field  :place, class: 'form-control' %>
+
+      <!-- t.text :description
+      t.datetime :date
+      t.string :place -->
+
+
+      <%= f.submit "Create", class: "btn btn-primary" %>
+    <% end %>
+
+  </div>
+</div>

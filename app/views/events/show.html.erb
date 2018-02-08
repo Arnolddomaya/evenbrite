@@ -1,0 +1,8 @@
+
+<h1>Event n° <%= @event.id %></h1>
+<h3>Description: <strong><%= @event.description %></strong></h3>
+<h3>Date: <strong><%= @event.date %></strong></h3>
+<h3>Place: <strong><%= @event.place  %></strong></h3>
+
+<h4><%= link_to '[Editer] ', edit_event_path(@event) %> <%= link_to '[Suprimer]', @event, method: :delete %>
+<%= link_to '[Liste des Events] ', events_path %></h4>
