@@ -71,6 +71,13 @@ class EventsController < ApplicationController
 
   end
 
+  def subscribe
+    render html: "method pas reussis pour l'instant"
+
+
+
+  end
+
   def destroy
     @event = Event.find(params[:id])
     @event.destroy

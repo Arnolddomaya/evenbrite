@@ -1,24 +1,14 @@
 # README
+app heroku https://j24-eventbrite-ad.herokuapp.com/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## les table sont liée de la manière suivante :
 
-* Ruby version
+user -> creations -> events
 
-* System dependencies
+even -> registrations -> users
 
-* Configuration
+* Le bouton "subscribe" pour un event apparait en fonction de si l'user y est inscit ou pas
+* Parcontre je n'ai pas encore trouvé le code pour recuperer l'event dans la method "subscribe" donc cette partie n'est pas achévée 
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## rentrez obligatoirement tout les champs lors de la création d'un event ( les exceptions n'ont pas été prises en compte pour l'instant )

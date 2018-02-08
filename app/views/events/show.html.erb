@@ -17,5 +17,5 @@
 <% end %>
 
 <%if @display_bottom %>
-  <p><%= link_to "Rejoindre l'event", users_new_path, class: "btn btn-primary" %></p>
+  <p><%= link_to "Rejoindre l'event", subscribe_path(@event), class: "btn btn-primary" %></p>
 <% end %>
