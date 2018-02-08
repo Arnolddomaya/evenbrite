@@ -7,3 +7,11 @@
 
 <h4><%= link_to '[Editer] ', edit_event_path(@event) %> <%= link_to '[Suprimer]', @event, method: :delete %>
 <%= link_to '[Liste des Events] ', events_path %></h4>
+
+<h3><em>Liste des invités</em></h3>
+
+<% if @participants %>
+  <% @participants.each do |part| %>
+    <h4>user n° <%= part.id  %>, <%= part.name  %></h4>
+  <% end %>
+<% end %>

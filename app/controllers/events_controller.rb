@@ -33,6 +33,16 @@ class EventsController < ApplicationController
       @event = Event.find(params[:id])
       creation = Creation.find_by(event_id: @event.id)
       @event_creator = creation.user
+      participations = Registration.where(event_id: @event.id)
+
+      @participants = []
+      if participations
+
+        participations.each do |participation|
+          @participants << User.find(participation.user_id)
+
+        end
+      end
     else
      redirect_to login_path
      flash.now[:danger] = 'connect before create an event'
