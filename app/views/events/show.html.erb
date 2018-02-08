@@ -5,7 +5,7 @@
 <h3>Date: <strong><%= @event.date %></strong></h3>
 <h3>Place: <strong><%= @event.place  %></strong></h3>
 
-<h4><%= link_to '[Editer] ', edit_event_path(@event) %> <%= link_to '[Suprimer]', @event, method: :delete %>
+<h4> <%= link_to '[Suprimer]', @event, method: :delete %>
 <%= link_to '[Liste des Events] ', events_path %></h4>
 
 <h3><em>Liste des invités</em></h3>
@@ -14,4 +14,8 @@
   <% @participants.each do |part| %>
     <h4>user n° <%= part.id  %>, <%= part.name  %></h4>
   <% end %>
+<% end %>
+
+<%if @display_bottom %>
+  <p><%= link_to "Rejoindre l'event", users_new_path, class: "btn btn-primary" %></p>
 <% end %>

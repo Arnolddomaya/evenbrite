@@ -35,6 +35,13 @@ class EventsController < ApplicationController
       @event_creator = creation.user
       participations = Registration.where(event_id: @event.id)
 
+      @current_user = User.find_by(id: session[:user_id])
+      @display_bottom = true
+
+      if @event.users.include?(@current_user)
+        @display_bottom = false
+      end
+
       @participants = []
       if participations
 
@@ -55,6 +62,7 @@ class EventsController < ApplicationController
     event = Event.new(event_params)
     if event.save
       @current_user.events << event
+      event.users << @current_user
       redirect_to user_path(@current_user)
       Creation.create(user_id:@current_user, event_id:event)
     else
@@ -63,7 +71,11 @@ class EventsController < ApplicationController
 
   end
 
-
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    redirect_to events_path
+  end
 
   private
   def event_params
