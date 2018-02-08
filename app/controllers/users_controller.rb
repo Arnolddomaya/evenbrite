@@ -19,6 +19,17 @@ class UsersController < ApplicationController
 
   def show
 		@user = User.find(params[:id])
+    events = Event.all
+    @past_events =[]
+    @future_events = []
+
+    events.each do |event|
+      if event.date < Date.current
+        @past_events << event
+      else
+        @future_events << event
+      end
+    end
 	end
 
 	def edit

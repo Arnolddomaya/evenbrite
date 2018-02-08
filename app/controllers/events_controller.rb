@@ -14,7 +14,17 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.all
+    events = Event.all
+    @past_events =[]
+    @future_events = []
+
+    events.each do |event|
+      if event.date < Date.current
+        @past_events << event
+      else
+        @future_events << event
+      end
+    end
   end
 
 

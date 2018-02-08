@@ -8,8 +8,13 @@
 <%= link_to '[Liste des utilisateurs] ', users_path %><%= link_to '[Liste des Events] ', events_path %></h4>
 <h4> <%= link_to 'Creer un event', new_event_path %></h4>
 
-<h2>Evenements</h2>
-<% @user.events.each do |event| %>
-  <h4>n° <strong><%= event.id %></strong>,  description : <strong><%= event.description %></strong></h4>
+<h3><em>Events à venir</em></h3>
+<% @future_events.each do |event| %>
 
-<% end %>
+  <h4>N° <strong><%= event.id %></strong>, Description   <strong><%= event.description %></strong>   <%= link_to '[voir] ', event_path(event) %> </h4>
+<% end  %>
+<h3><em>Events passés</em></h3>
+<% @past_events.each do |event| %>
+
+  <h4>N° <strong><%= event.id %></strong>, Description   <strong><%= event.description %></strong>   <%= link_to '[voir] ', event_path(event) %> </h4>
+<% end  %>
