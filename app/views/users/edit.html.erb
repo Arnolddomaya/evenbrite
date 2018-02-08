@@ -1,0 +1,10 @@
+<% provide(:title, "Show")%>
+
+
+<%= form_with(model: @user, local: true) do |form| %>
+  <%= form.label :Id %>
+  <%= form.text_field :name %>
+
+  <%= form.submit %>
+<% end %> <%= link_to 'Clique pour suprimer', @user, method: :delete %>
+<%= link_to 'Listes des utilisateurs', users_path %>

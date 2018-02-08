@@ -1,0 +1,9 @@
+<% provide(:title, "Index")%>
+
+<h1>Listes des inscrits</h1>
+<% @users.each do |user| %>
+  <p>N° <strong><%= user.id %></strong>, Id   <strong><%= user.name %></strong>   <%= link_to '[voir] ', user_path(user) %> <%= link_to '[Editer] ', edit_user_path(user) %></p>
+<% end  %>
+
+
+<p><%= link_to "Créer un nouveau utilisateur", users_new_path, class: "btn btn-primary" %></p>

@@ -1,0 +1,8 @@
+<% provide(:title, "Show")%>
+
+<h1>Utilisateur n° <%= @user.id %></h1>
+<p>Id : <strong><%= @user.name %></strong></p>
+
+
+<p><%= link_to '[Editer] ', edit_user_path(@user) %> <%= link_to '[Suprimer]', @user, method: :delete %>
+<%= link_to '[Liste des utilisateurs] ', users_path %></p>
