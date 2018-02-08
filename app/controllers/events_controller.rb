@@ -19,7 +19,14 @@ class EventsController < ApplicationController
 
 
   def show
-    @event = Event.find(params[:id]) 
+    if session[:user_id]
+      @event = Event.find(params[:id])
+      creation = Creation.find_by(event_id: @event.id)
+      @event_creator = creation.user
+    else
+     redirect_to login_path
+     flash.now[:danger] = 'connect before create an event'
+   end
 
   end
 

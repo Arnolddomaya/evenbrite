@@ -1,12 +1,12 @@
 <% provide(:title, "Show")%>
 
 <h1>Utilisateur n° <%= @user.id %></h1>
-<p>Id : <strong><%= @user.name %></strong></p>
+<h3>Id : <strong><%= @user.name %></strong></h3>
 
 
-<p><%= link_to '[Editer] ', edit_user_path(@user) %> <%= link_to '[Suprimer]', @user, method: :delete %>
-<%= link_to '[Liste des utilisateurs] ', users_path %></p>
-<p> <%= link_to 'Creer un event', new_event_path %></p>
+<h4><%= link_to '[Editer] ', edit_user_path(@user) %> <%= link_to '[Suprimer]', @user, method: :delete %>
+<%= link_to '[Liste des utilisateurs] ', users_path %><%= link_to '[Liste des Events] ', events_path %></h4>
+<h4> <%= link_to 'Creer un event', new_event_path %></h4>
 
 <h2>Evenements</h2>
 <% @user.events.each do |event| %>
